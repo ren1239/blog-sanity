@@ -8,7 +8,7 @@ import Link from "next/link";
 export const revalidate = 30; // how often to revalidate
 
 async function getData() {
-  const query = `*[_type == 'blog'] | order(createdAt desc) {
+  const query = `*[_type == 'blog'] | order(_createdAt desc) {
   title,
     smallDescription,
     price,
