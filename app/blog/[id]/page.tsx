@@ -3,6 +3,8 @@ import { client, urlFor } from "../../lib/sanity";
 import Image from "next/image";
 import { PortableText } from "next-sanity";
 
+export const revalidate = 20; // how often to revalidate
+
 async function getData(id: string) {
   const query = `*[_type == "blog" && slug.current == "${id}"]{
 "currentSlug" : slug.current,
